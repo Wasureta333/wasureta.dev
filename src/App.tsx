@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 
 export function RootLayout() {
   return (
-    <div className="xl:w-[75%] xl:px-0 w-full px-4 flex flex-col items-center mx-auto">
+    <div className="w-full flex flex-col items-center">
       <Outlet />
     </div>
   )
