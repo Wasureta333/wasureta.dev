@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- BASE --- */
+@layer base {
+  /* occupa tutta l'altezza, evita “buchi” dove si vede il body */
+  html, body { height: 100%; }
+
+  /* body coerente col tema (light/dark) */
+  body {
+    @apply bg-white text-neutral-900 dark:bg-liquirice dark:text-flash;
+  }
+
+  /* (opz.) selezione testo: chiara in light, scura in dark */
+  :root ::selection {
+    background-color: #0A0A0A; /* dark ink on light text */
+    color: #FAFAFA;
+  }
+  .dark ::selection {
+    background-color: #FAFAFA; /* light ink on dark text */
+    color: #0A0A0A;
+  }
+
+  .theme {
+    --animate-shine: shine var(--duration) infinite linear;
+  }
+}
+
+/* disabilita transizioni del View Transition API sul root */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
